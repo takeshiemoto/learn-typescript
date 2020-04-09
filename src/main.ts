@@ -1,1 +1,8 @@
-console.log('Learn TypeScript');
+class Main {
+  sayHello() {
+    console.log("hello");
+  }
+}
+
+const main = new Main();
+main.sayHello();
