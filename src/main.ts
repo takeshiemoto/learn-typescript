@@ -1,6 +1,7 @@
 class Main {
   sayHello() {
     console.log("hello");
+    console.log("hello");
   }
 }
 
