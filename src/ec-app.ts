@@ -69,5 +69,6 @@ export class EcApp {
     user1.addCart(product3);
     user1.removeCart(product1);
     user1.payMoney(cashier.calcAmount(user1.cart));
+    console.log(user1.money);
   }
 }
