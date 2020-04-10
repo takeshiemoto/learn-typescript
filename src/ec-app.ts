@@ -10,16 +10,12 @@ class Product {
 }
 
 class Cart {
-  private products: Product[] = [];
+  products: Product[] = [];
   add(product: Product) {
     this.products.push(product);
   }
   remove({ id }: Product) {
     this.products = this.products.filter((product) => product.id !== id);
-  }
-
-  calcTotal(): number {
-    return this.products.reduce((acc, cur) => acc + cur.price, 0);
   }
 }
 
@@ -27,6 +23,7 @@ class User {
   id: number;
   name: string;
   cart: Cart;
+  money = 1000;
   constructor(id: number, name: string) {
     this.id = id;
     this.name = name;
@@ -41,8 +38,15 @@ class User {
     this.cart.remove(product);
   }
 
-  bill(): void {
-    console.log(this.cart.calcTotal());
+  payMoney(totalAmount: number): number {
+    this.money = this.money - totalAmount;
+    return totalAmount;
+  }
+}
+
+class Cashier {
+  calcAmount(cart: Cart): number {
+    return cart.products.reduce((acc, cur) => acc + cur.price, 0);
   }
 }
 
@@ -55,17 +59,15 @@ export class EcApp {
 
     /** Users */
     const user1 = new User(1, "John");
-    const user2 = new User(2, "Paul");
+
+    /** Cashier*/
+    const cashier = new Cashier();
 
     /** Shopping use case */
     user1.addCart(product1);
     user1.addCart(product2);
     user1.addCart(product3);
-    user1.bill();
-
-    user2.addCart(product2);
-    user2.addCart(product3);
-    user2.removeCart(product3);
-    user2.bill();
+    user1.removeCart(product1);
+    user1.payMoney(cashier.calcAmount(user1.cart));
   }
 }
