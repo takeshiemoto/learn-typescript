@@ -53,12 +53,12 @@ class Cashier {
 export class EcApp {
   serve(): void {
     /** Products */
-    const product1 = new Product(1, "にんじん", 100);
-    const product2 = new Product(2, "たまねぎ", 98);
-    const product3 = new Product(3, "かぼちゃ", 120);
+    const product1 = new Product(1, 'ci', 100);
+    const product2 = new Product(2, '朝鮮人参', 98);
+    const product3 = new Product(3, 'かぼちゃ', 120);
 
     /** Users */
-    const user1 = new User(1, "John");
+    const user1 = new User(1, 'John');
 
     /** Cashier*/
     const cashier = new Cashier();
