@@ -1,4 +1,4 @@
-import { Currency } from './companion-object';
+import { Currency, Shoe } from './companion-object';
 
 // 型として
 const amountDue: Currency = {
@@ -8,3 +8,5 @@ const amountDue: Currency = {
 
 // 値として
 const otherAmountDue = Currency.from(330, 'EUR');
+
+Shoe.create('boot');
