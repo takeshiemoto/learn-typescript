@@ -63,6 +63,6 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true,
     /* Disallow inconsistently-cased references to the same file. */
-    "lib": ["dom", "es5", "scripthost", "es2015.promise"]
+    "lib": ["dom", "es5", "scripthost", "es2015"]
   }
 }
