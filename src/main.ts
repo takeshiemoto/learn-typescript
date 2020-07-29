@@ -6,6 +6,7 @@
 // const ecApp = new EcApp();
 // ecApp.serve();
 
-import { main } from './error-handling';
+// import { main } from './error-handling';
 
-main();
+// main();
+import './sandbox';
