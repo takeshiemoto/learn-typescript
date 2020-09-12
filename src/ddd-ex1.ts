@@ -8,8 +8,12 @@ class DateOfBarth {
   constructor(private readonly barthDate: Date) {}
 
   getAge(): number {
-    const yearsMilliSeconds = this.CURRENT_DATE_TIME - this.barthDate.getTime();
+    const yearsMilliSeconds = this.getYearsMilliSeconds();
     return Math.floor(yearsMilliSeconds / this.YEARS_DATE_TIME);
+  }
+
+  private getYearsMilliSeconds() {
+    return this.CURRENT_DATE_TIME - this.barthDate.getTime();
   }
 
   checkBarthMonth(): boolean {

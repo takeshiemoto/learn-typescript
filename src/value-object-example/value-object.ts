@@ -16,10 +16,6 @@ export abstract class AbstractValueObject<T> {
   }
 }
 
-export type ValueObjectProps = {
-  [index: string]: any;
-};
-
 export abstract class ValueObject<
   T extends ValueObjectProps
 > extends AbstractValueObject<T> {}
@@ -29,3 +25,7 @@ export abstract class PrimitiveValueObject<T> extends AbstractValueObject<T> {
     return this._value;
   }
 }
+
+export type ValueObjectProps = {
+  [index: string]: never;
+};
